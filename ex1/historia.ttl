@@ -1,0 +1,216 @@
+@prefix : <http://www.rpcw2024/ex1/historia/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.rpcw2024/ex1/historia/> .
+
+<http://www.rpcw2024/ex1/historia> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.rpcw2024/ex1/historia#contrata
+:contrata rdf:type owl:ObjectProperty ;
+          rdfs:domain :Pessoa ;
+          rdfs:range :Pessoa .
+
+
+###  http://www.rpcw2024/ex1/historia#cria
+:cria rdf:type owl:ObjectProperty ;
+      rdfs:domain :Pessoa ;
+      rdfs:range :Produtos .
+
+
+###  http://www.rpcw2024/ex1/historia#cultiva
+:cultiva rdf:type owl:ObjectProperty ;
+         rdfs:domain :Pessoa ;
+         rdfs:range :Produtos .
+
+
+###  http://www.rpcw2024/ex1/historia#esposade
+:esposade rdf:type owl:ObjectProperty ;
+          rdfs:domain :Pessoa ;
+          rdfs:range :Pessoa .
+
+
+###  http://www.rpcw2024/ex1/historia#filhode
+:filhode rdf:type owl:ObjectProperty ;
+         rdfs:domain :Pessoa ;
+         rdfs:range :Pessoa .
+
+
+###  http://www.rpcw2024/ex1/historia#possuiFazenda
+:possuiFazenda rdf:type owl:ObjectProperty ;
+               rdfs:domain :Pessoa ;
+               rdfs:range :Fazenda .
+
+
+###  http://www.rpcw2024/ex1/historia#profissao
+:profissao rdf:type owl:ObjectProperty .
+
+
+###  http://www.rpcw2024/ex1/historia#trocacom
+:trocacom rdf:type owl:ObjectProperty ;
+          rdfs:domain :Pessoa ;
+          rdfs:range :Pessoa .
+
+
+###  http://www.rpcw2024/ex1/historia#vendem
+:vendem rdf:type owl:ObjectProperty ;
+        rdfs:domain :Pessoa ;
+        rdfs:range :Produtos .
+
+
+###  http://www.rpcw2024/ex1/historia#vizinhode
+:vizinhode rdf:type owl:ObjectProperty ;
+           rdfs:domain :Pessoa ;
+           rdfs:range :Pessoa .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.rpcw2024/ex1/historia#etemporario
+:etemporario rdf:type owl:DatatypeProperty .
+
+
+###  http://www.rpcw2024/ex1/historia#gosto
+:gosto rdf:type owl:DatatypeProperty .
+
+
+###  http://www.rpcw2024/ex1/historia#nome
+:nome rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Pessoa ;
+      rdfs:range xsd:string .
+
+
+###  http://www.rpcw2024/ex1/historia#possui
+:possui rdf:type owl:DatatypeProperty .
+
+
+###  http://www.rpcw2024/ex1/historia#trabalho
+:trabalho rdf:type owl:DatatypeProperty .
+
+
+###  http://www.rpcw2024/ex1/historia#vive
+:vive rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.rpcw2024/ex1/historia#Animal
+:Animal rdf:type owl:Class ;
+        rdfs:subClassOf :Produtos .
+
+
+###  http://www.rpcw2024/ex1/historia#Fazenda
+:Fazenda rdf:type owl:Class .
+
+
+###  http://www.rpcw2024/ex1/historia#Fruta
+:Fruta rdf:type owl:Class ;
+       rdfs:subClassOf :Produtos .
+
+
+###  http://www.rpcw2024/ex1/historia#Pessoa
+:Pessoa rdf:type owl:Class .
+
+
+###  http://www.rpcw2024/ex1/historia#Produtos
+:Produtos rdf:type owl:Class .
+
+
+###  http://www.rpcw2024/ex1/historia#Vegetal
+:Vegetal rdf:type owl:Class ;
+         rdfs:subClassOf :Produtos .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.rpcw2024/ex1/historia#Ana
+:Ana rdf:type owl:NamedIndividual ;
+     :filhode :sramaria ,
+              :srjoao ;
+     :gosto "ajudar a mãe a fazer as geleias" .
+
+
+###  http://www.rpcw2024/ex1/historia#Pedro
+:Pedro rdf:type owl:NamedIndividual ,
+                :Pessoa .
+
+
+###  http://www.rpcw2024/ex1/historia#bananas
+:bananas rdf:type owl:NamedIndividual ,
+                  :Fruta .
+
+
+###  http://www.rpcw2024/ex1/historia#fazendagrande
+:fazendagrande rdf:type owl:NamedIndividual ,
+                        :Fazenda .
+
+
+###  http://www.rpcw2024/ex1/historia#fazendapequena
+:fazendapequena rdf:type owl:NamedIndividual ,
+                         :Fazenda .
+
+
+###  http://www.rpcw2024/ex1/historia#galinhas
+:galinhas rdf:type owl:NamedIndividual ,
+                   :Animal .
+
+
+###  http://www.rpcw2024/ex1/historia#laranja
+:laranja rdf:type owl:NamedIndividual ,
+                  :Fruta .
+
+
+###  http://www.rpcw2024/ex1/historia#maca
+:maca rdf:type owl:NamedIndividual ,
+               :Fruta .
+
+
+###  http://www.rpcw2024/ex1/historia#porcos
+:porcos rdf:type owl:NamedIndividual ,
+                 :Animal .
+
+
+###  http://www.rpcw2024/ex1/historia#sramaria
+:sramaria rdf:type owl:NamedIndividual ,
+                   :Pessoa ;
+          :esposade :srjoao ;
+          :nome "Senhora Maria" .
+
+
+###  http://www.rpcw2024/ex1/historia#srcarlos
+:srcarlos rdf:type owl:NamedIndividual ,
+                   :Pessoa .
+
+
+###  http://www.rpcw2024/ex1/historia#srjoao
+:srjoao rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :cria :galinhas ,
+              :porcos ,
+              :vacas ;
+        :cultiva :bananas ,
+                 :laranja ,
+                 :maca ;
+        :possuiFazenda :fazendapequena ;
+        :trabalho "agricultor" ;
+        :vive "vila de São José" .
+
+
+###  http://www.rpcw2024/ex1/historia#vacas
+:vacas rdf:type owl:NamedIndividual ,
+                :Animal .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
