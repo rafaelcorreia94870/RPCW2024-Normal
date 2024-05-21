@@ -1,0 +1,615 @@
+@prefix : <http://www.example.org/disease-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+
+:Ontology a owl:Ontology .
+
+# Classes
+:Disease a owl:Class .
+:Symptom a owl:Class .
+:Treatment a owl:Class .
+:Patient a owl:Class .
+
+# Properties
+:hasSymptom a owl:ObjectProperty ;
+    rdfs:domain :Disease ;
+    rdfs:range :Symptom .
+
+:hasTreatment a owl:ObjectProperty ;
+    rdfs:domain :Disease ;
+    rdfs:range :Treatment .
+
+:exhibitsSymptom a owl:ObjectProperty ;
+    rdfs:domain :Patient ;
+    rdfs:range :Symptom .
+
+:hasDisease a owl:ObjectProperty ;
+    rdfs:domain :Patient ;
+    rdfs:range :Disease .
+
+:receivesTreatment a owl:ObjectProperty ;
+    rdfs:domain :Patient ;
+    rdfs:range :Treatment .
+
+# Disease instances
+:Flu a :Disease ;
+    :hasSymptom :Fever, :Cough, :SoreThroat ;
+    :hasTreatment :Rest, :Hydration, :AntiviralDrugs .
+
+:Diabetes a :Disease ;
+    :hasSymptom :IncreasedThirst, :FrequentUrination, :Fatigue ;
+    :hasTreatment :InsulinTherapy, :DietModification, :Exercise .
+
+# Symptom instances
+:Fever a :Symptom .
+:Cough a :Symptom .
+:SoreThroat a :Symptom .
+:IncreasedThirst a :Symptom .
+:FrequentUrination a :Symptom .
+:Fatigue a :Symptom .
+
+# Treatment instances
+:Rest a :Treatment .
+:Hydration a :Treatment .
+:AntiviralDrugs a :Treatment .
+:InsulinTherapy a :Treatment .
+:DietModification a :Treatment .
+:Exercise a :Treatment .
+
+
+# Patient instances
+:Patient1 a :Patient ;
+    :name "Paul Harrods" ;
+    :exhibitsSymptom :Fever ;
+    :exhibitsSymptom :Cough ;
+    :exhibitsSymptom :SoreThroat .
+
+:Patient2 a :Patient ;
+    :name "Ana Montana";
+    :exhibitsSymptom :IncreasedThirst ;
+    :exhibitsSymptom :FrequentUrination ;
+    :exhibitsSymptom :Fatigue .
+
+
+    :Cough a :Disease.
+    
+    :SoreThroat a :Disease.
+    
+    :Fatigue a :Disease.
+    
+    :FrequentUrination a :Disease.
+    
+    :Fever a :Disease.
+    
+    :IncreasedThirst a :Disease.
+    
+    :Disease a :Disease.
+    
+    :Drug_Reaction a :Disease.
+    
+    :Malaria a :Disease.
+    
+    :Allergy a :Disease.
+    
+    :Hypothyroidism a :Disease.
+    
+    :Psoriasis a :Disease.
+    
+    :GERD a :Disease.
+    
+    :Chronic_cholestasis a :Disease.
+    
+    :hepatitis_A a :Disease.
+    
+    :Osteoarthristis a :Disease.
+    
+    :vertigo_Paroymsal__Positional_Vertigo a :Disease.
+    
+    :Hypoglycemia a :Disease.
+    
+    :Acne a :Disease.
+    
+    :Diabetes a :Disease.
+    
+    :Impetigo a :Disease.
+    
+    :Hypertension a :Disease.
+    
+    :Peptic_ulcer_diseae a :Disease.
+    
+    :Dimorphic_hemorrhoidspiles a :Disease.
+    
+    :Common_Cold a :Disease.
+    
+    :Chicken_pox a :Disease.
+    
+    :Cervical_spondylosis a :Disease.
+    
+    :Hyperthyroidism a :Disease.
+    
+    :Urinary_tract_infection a :Disease.
+    
+    :Varicose_veins a :Disease.
+    
+    :AIDS a :Disease.
+    
+    :Paralysis_brain_hemorrhage a :Disease.
+    
+    :Typhoid a :Disease.
+    
+    :Hepatitis_B a :Disease.
+    
+    :Fungal_infection a :Disease.
+    
+    :Hepatitis_C a :Disease.
+    
+    :Migraine a :Disease.
+    
+    :Bronchial_Asthma a :Disease.
+    
+    :Alcoholic_hepatitis a :Disease.
+    
+    :Jaundice a :Disease.
+    
+    :Hepatitis_E a :Disease.
+    
+    :Dengue a :Disease.
+    
+    :Hepatitis_D a :Disease.
+    
+    :Heart_attack a :Disease.
+    
+    :Pneumonia a :Disease.
+    
+    :Arthritis a :Disease.
+    
+    :Gastroenteritis a :Disease.
+    
+    :Tuberculosis a :Disease.
+    
+    :Dimorphic_hemmorhoidspiles a :Disease.
+    
+    :description a owl:DatatypeProperty .
+    
+    :Cough :description "" .
+    
+    :SoreThroat :description "" .
+    
+    :Fatigue :description "" .
+    
+    :FrequentUrination :description "" .
+    
+    :Fever :description "" .
+    
+    :IncreasedThirst :description "" .
+    
+    :Disease :description "Description" .
+    
+    :Drug_Reaction :description "An_adverse_drug_reaction_ADR_is_an_injury_caused_by_taking_medication._ADRs_may_occur_following_a_single_dose_or_prolonged_administration_of_a_drug_or_result_from_the_combination_of_two_or_more_drugs." .
+    
+    :Malaria :description "An_infectious_disease_caused_by_protozoan_parasites_from_the_Plasmodium_family_that_can_be_transmitted_by_the_bite_of_the_Anopheles_mosquito_or_by_a_contaminated_needle_or_transfusion._Falciparum_malaria_is_the_most_deadly_type." .
+    
+    :Allergy :description "An_allergy_is_an_immune_system_response_to_a_foreign_substance_that's_not_typically_harmful_to_your_body.They_can_include_certain_foods,_pollen,_or_pet_dander._Your_immune_system's_job_is_to_keep_you_healthy_by_fighting_harmful_pathogens." .
+    
+    :Hypothyroidism :description "Hypothyroidism,_also_called_underactive_thyroid_or_low_thyroid,_is_a_disorder_of_the_endocrine_system_in_which_the_thyroid_gland_does_not_produce_enough_thyroid_hormone." .
+    
+    :Psoriasis :description "Psoriasis_is_a_common_skin_disorder_that_forms_thick,_red,_bumpy_patches_covered_with_silvery_scales._They_can_pop_up_anywhere,_but_most_appear_on_the_scalp,_elbows,_knees,_and_lower_back._Psoriasis_can't_be_passed_from_person_to_person._It_does_sometimes_happen_in_members_of_the_same_family." .
+    
+    :GERD :description "Gastroesophageal_reflux_disease,_or_GERD,_is_a_digestive_disorder_that_affects_the_lower_esophageal_sphincter_LES,_the_ring_of_muscle_between_the_esophagus_and_stomach._Many_people,_including_pregnant_women,_suffer_from_heartburn_or_acid_indigestion_caused_by_GERD." .
+    
+    :Chronic_cholestasis :description "Chronic_cholestatic_diseases,_whether_occurring_in_infancy,_childhood_or_adulthood,_are_characterized_by_defective_bile_acid_transport_from_the_liver_to_the_intestine,_which_is_caused_by_primary_damage_to_the_biliary_epithelium_in_most_cases" .
+    
+    :hepatitis_A :description "Hepatitis_A_is_a_highly_contagious_liver_infection_caused_by_the_hepatitis_A_virus._The_virus_is_one_of_several_types_of_hepatitis_viruses_that_cause_inflammation_and_affect_your_liver's_ability_to_function." .
+    
+    :Osteoarthristis :description "Osteoarthritis_is_the_most_common_form_of_arthritis,_affecting_millions_of_people_worldwide._It_occurs_when_the_protective_cartilage_that_cushions_the_ends_of_your_bones_wears_down_over_time." .
+    
+    :vertigo_Paroymsal__Positional_Vertigo :description "Benign_paroxysmal_positional_vertigo_BPPV_is_one_of_the_most_common_causes_of_vertigo_—_the_sudden_sensation_that_you're_spinning_or_that_the_inside_of_your_head_is_spinning._Benign_paroxysmal_positional_vertigo_causes_brief_episodes_of_mild_to_intense_dizziness." .
+    
+    :Hypoglycemia :description "Hypoglycemia_is_a_condition_in_which_your_blood_sugar_glucose_level_is_lower_than_normal._Glucose_is_your_body's_main_energy_source._Hypoglycemia_is_often_related_to_diabetes_treatment._But_other_drugs_and_a_variety_of_conditions_—_many_rare_—_can_cause_low_blood_sugar_in_people_who_don't_have_diabetes." .
+    
+    :Acne :description "Acne_vulgaris_is_the_formation_of_comedones,_papules,_pustules,_nodules,_and/or_cysts_as_a_result_of_obstruction_and_inflammation_of_pilosebaceous_units_hair_follicles_and_their_accompanying_sebaceous_gland._Acne_develops_on_the_face_and_upper_trunk._It_most_often_affects_adolescents." .
+    
+    :Diabetes :description "Diabetes_is_a_disease_that_occurs_when_your_blood_glucose,_also_called_blood_sugar,_is_too_high._Blood_glucose_is_your_main_source_of_energy_and_comes_from_the_food_you_eat._Insulin,_a_hormone_made_by_the_pancreas,_helps_glucose_from_food_get_into_your_cells_to_be_used_for_energy." .
+    
+    :Impetigo :description "Impetigo_im-puh-TIE-go_is_a_common_and_highly_contagious_skin_infection_that_mainly_affects_infants_and_children._Impetigo_usually_appears_as_red_sores_on_the_face,_especially_around_a_child's_nose_and_mouth,_and_on_hands_and_feet._The_sores_burst_and_develop_honey-colored_crusts." .
+    
+    :Hypertension :description "Hypertension_HTN_or_HT,_also_known_as_high_blood_pressure_HBP,_is_a_long-term_medical_condition_in_which_the_blood_pressure_in_the_arteries_is_persistently_elevated._High_blood_pressure_typically_does_not_cause_symptoms." .
+    
+    :Peptic_ulcer_diseae :description "Peptic_ulcer_disease_PUD_is_a_break_in_the_inner_lining_of_the_stomach,_the_first_part_of_the_small_intestine,_or_sometimes_the_lower_esophagus._An_ulcer_in_the_stomach_is_called_a_gastric_ulcer,_while_one_in_the_first_part_of_the_intestines_is_a_duodenal_ulcer." .
+    
+    :Dimorphic_hemorrhoidspiles :description "Hemorrhoids,_also_spelled_haemorrhoids,_are_vascular_structures_in_the_anal_canal._In_their_..._Other_names,_Haemorrhoids,_piles,_hemorrhoidal_disease_." .
+    
+    :Common_Cold :description "The_common_cold_is_a_viral_infection_of_your_nose_and_throat_upper_respiratory_tract._It's_usually_harmless,_although_it_might_not_feel_that_way._Many_types_of_viruses_can_cause_a_common_cold." .
+    
+    :Chicken_pox :description "Chickenpox_is_a_highly_contagious_disease_caused_by_the_varicella-zoster_virus_VZV._It_can_cause_an_itchy,_blister-like_rash._The_rash_first_appears_on_the_chest,_back,_and_face,_and_then_spreads_over_the_entire_body,_causing_between_250_and_500_itchy_blisters." .
+    
+    :Cervical_spondylosis :description "Cervical_spondylosis_is_a_general_term_for_age-related_wear_and_tear_affecting_the_spinal_disks_in_your_neck._As_the_disks_dehydrate_and_shrink,_signs_of_osteoarthritis_develop,_including_bony_projections_along_the_edges_of_bones_bone_spurs." .
+    
+    :Hyperthyroidism :description "Hyperthyroidism_overactive_thyroid_occurs_when_your_thyroid_gland_produces_too_much_of_the_hormone_thyroxine._Hyperthyroidism_can_accelerate_your_body's_metabolism,_causing_unintentional_weight_loss_and_a_rapid_or_irregular_heartbeat." .
+    
+    :Urinary_tract_infection :description "Urinary_tract_infection:_An_infection_of_the_kidney,_ureter,_bladder,_or_urethra._Abbreviated_UTI._Not_everyone_with_a_UTI_has_symptoms,_but_common_symptoms_include_a_frequent_urge_to_urinate_and_pain_or_burning_when_urinating." .
+    
+    :Varicose_veins :description "A_vein_that_has_enlarged_and_twisted,_often_appearing_as_a_bulging,_blue_blood_vessel_that_is_clearly_visible_through_the_skin._Varicose_veins_are_most_common_in_older_adults,_particularly_women,_and_occur_especially_on_the_legs." .
+    
+    :AIDS :description "Acquired_immunodeficiency_syndrome_AIDS_is_a_chronic,_potentially_life-threatening_condition_caused_by_the_human_immunodeficiency_virus_HIV._By_damaging_your_immune_system,_HIV_interferes_with_your_body's_ability_to_fight_infection_and_disease." .
+    
+    :Paralysis_brain_hemorrhage :description "Intracerebral_hemorrhage_ICH_is_when_blood_suddenly_bursts_into_brain_tissue,_causing_damage_to_your_brain._Symptoms_usually_appear_suddenly_during_ICH._They_include_headache,_weakness,_confusion,_and_paralysis,_particularly_on_one_side_of_your_body." .
+    
+    :Typhoid :description "An_acute_illness_characterized_by_fever_caused_by_infection_with_the_bacterium_Salmonella_typhi._Typhoid_fever_has_an_insidious_onset,_with_fever,_headache,_constipation,_malaise,_chills,_and_muscle_pain._Diarrhea_is_uncommon,_and_vomiting_is_not_usually_severe." .
+    
+    :Hepatitis_B :description "Hepatitis_B_is_an_infection_of_your_liver._It_can_cause_scarring_of_the_organ,_liver_failure,_and_cancer._It_can_be_fatal_if_it_isn't_treated._It's_spread_when_people_come_in_contact_with_the_blood,_open_sores,_or_body_fluids_of_someone_who_has_the_hepatitis_B_virus." .
+    
+    :Fungal_infection :description "In_humans,_fungal_infections_occur_when_an_invading_fungus_takes_over_an_area_of_the_body_and_is_too_much_for_the_immune_system_to_handle._Fungi_can_live_in_the_air,_soil,_water,_and_plants._There_are_also_some_fungi_that_live_naturally_in_the_human_body._Like_many_microbes,_there_are_helpful_fungi_and_harmful_fungi." .
+    
+    :Hepatitis_C :description "Inflammation_of_the_liver_due_to_the_hepatitis_C_virus_HCV,_which_is_usually_spread_via_blood_transfusion_rare,_hemodialysis,_and_needle_sticks._The_damage_hepatitis_C_does_to_the_liver_can_lead_to_cirrhosis_and_its_complications_as_well_as_cancer." .
+    
+    :Migraine :description "A_migraine_can_cause_severe_throbbing_pain_or_a_pulsing_sensation,_usually_on_one_side_of_the_head._It's_often_accompanied_by_nausea,_vomiting,_and_extreme_sensitivity_to_light_and_sound._Migraine_attacks_can_last_for_hours_to_days,_and_the_pain_can_be_so_severe_that_it_interferes_with_your_daily_activities." .
+    
+    :Bronchial_Asthma :description "Bronchial_asthma_is_a_medical_condition_which_causes_the_airway_path_of_the_lungs_to_swell_and_narrow._Due_to_this_swelling,_the_air_path_produces_excess_mucus_making_it_hard_to_breathe,_which_results_in_coughing,_short_breath,_and_wheezing._The_disease_is_chronic_and_interferes_with_daily_working." .
+    
+    :Alcoholic_hepatitis :description "Alcoholic_hepatitis_is_a_diseased,_inflammatory_condition_of_the_liver_caused_by_heavy_alcohol_consumption_over_an_extended_period_of_time._It's_also_aggravated_by_binge_drinking_and_ongoing_alcohol_use._If_you_develop_this_condition,_you_must_stop_drinking_alcohol" .
+    
+    :Jaundice :description "Yellow_staining_of_the_skin_and_sclerae_the_whites_of_the_eyes_by_abnormally_high_blood_levels_of_the_bile_pigment_bilirubin._The_yellowing_extends_to_other_tissues_and_body_fluids._Jaundice_was_once_called_the_morbus_regius_the_regal_disease_in_the_belief_that_only_the_touch_of_a_king_could_cure_it" .
+    
+    :Hepatitis_E :description "A_rare_form_of_liver_inflammation_caused_by_infection_with_the_hepatitis_E_virus_HEV._It_is_transmitted_via_food_or_drink_handled_by_an_infected_person_or_through_infected_water_supplies_in_areas_where_fecal_matter_may_get_into_the_water._Hepatitis_E_does_not_cause_chronic_liver_disease." .
+    
+    :Dengue :description "an_acute_infectious_disease_caused_by_a_flavivirus_species_Dengue_virus_of_the_genus_Flavivirus,_transmitted_by_aedes_mosquitoes,_and_characterized_by_headache,_severe_joint_pain,_and_a_rash._—_called_also_breakbone_fever,_dengue_fever." .
+    
+    :Hepatitis_D :description "Hepatitis_D,_also_known_as_the_hepatitis_delta_virus,_is_an_infection_that_causes_the_liver_to_become_inflamed._This_swelling_can_impair_liver_function_and_cause_long-term_liver_problems,_including_liver_scarring_and_cancer._The_condition_is_caused_by_the_hepatitis_D_virus_HDV." .
+    
+    :Heart_attack :description "The_death_of_heart_muscle_due_to_the_loss_of_blood_supply._The_loss_of_blood_supply_is_usually_caused_by_a_complete_blockage_of_a_coronary_artery,_one_of_the_arteries_that_supplies_blood_to_the_heart_muscle." .
+    
+    :Pneumonia :description "Pneumonia_is_an_infection_in_one_or_both_lungs._Bacteria,_viruses,_and_fungi_cause_it._The_infection_causes_inflammation_in_the_air_sacs_in_your_lungs,_which_are_called_alveoli._The_alveoli_fill_with_fluid_or_pus,_making_it_difficult_to_breathe." .
+    
+    :Arthritis :description "Arthritis_is_the_swelling_and_tenderness_of_one_or_more_of_your_joints._The_main_symptoms_of_arthritis_are_joint_pain_and_stiffness,_which_typically_worsen_with_age._The_most_common_types_of_arthritis_are_osteoarthritis_and_rheumatoid_arthritis." .
+    
+    :Gastroenteritis :description "Gastroenteritis_is_an_inflammation_of_the_digestive_tract,_particularly_the_stomach,_and_large_and_small_intestines._Viral_and_bacterial_gastroenteritis_are_intestinal_infections_associated_with_symptoms_of_diarrhea_,_abdominal_cramps,_nausea_,_and_vomiting_." .
+    
+    :Tuberculosis :description "Tuberculosis_TB_is_an_infectious_disease_usually_caused_by_Mycobacterium_tuberculosis_MTB_bacteria._Tuberculosis_generally_affects_the_lungs,_but_can_also_affect_other_parts_of_the_body._Most_infections_show_no_symptoms,_in_which_case_it_is_known_as_latent_tuberculosis." .
+    
+    :Dimorphic_hemmorhoidspiles :description "" .
+    
+    :cover_mouth a :Treatment  .
+    
+    :consult_doctor a :Treatment  .
+    
+    :medication a :Treatment  .
+    
+    :rest a :Treatment  .
+    
+        :Disease :hasTreatment :Precaution_1 .
+        
+        :Disease :hasTreatment :Precaution_4 .
+        
+        :Disease :hasTreatment :Precaution_3 .
+        
+        :Disease :hasTreatment :Precaution_2 .
+        
+        :Drug_Reaction :hasTreatment :consult_nearest_hospital .
+        
+        :Drug_Reaction :hasTreatment :stop_taking_drug .
+        
+        :Drug_Reaction :hasTreatment :stop_irritation .
+        
+        :Drug_Reaction :hasTreatment :follow_up .
+        
+        :Malaria :hasTreatment :Consult_nearest_hospital .
+        
+        :Malaria :hasTreatment :keep_mosquitos_out .
+        
+        :Malaria :hasTreatment :avoid_oily_food .
+        
+        :Malaria :hasTreatment :avoid_non_veg_food .
+        
+        :Allergy :hasTreatment :use_ice_to_compress_itching .
+        
+        :Allergy :hasTreatment :apply_calamine .
+        
+        :Allergy :hasTreatment :cover_area_with_bandage .
+        
+        :Hypothyroidism :hasTreatment :reduce_stress .
+        
+        :Hypothyroidism :hasTreatment :eat_healthy .
+        
+        :Hypothyroidism :hasTreatment :get_proper_sleep .
+        
+        :Hypothyroidism :hasTreatment :exercise .
+        
+        :Psoriasis :hasTreatment :wash_hands_with_warm_soapy_water .
+        
+        :Psoriasis :hasTreatment :salt_baths .
+        
+        :Psoriasis :hasTreatment :consult_doctor .
+        
+        :Psoriasis :hasTreatment :stop_bleeding_using_pressure .
+        
+        :GERD :hasTreatment :avoid_fatty_spicy_food .
+        
+        :GERD :hasTreatment :avoid_lying_down_after_eating .
+        
+        :GERD :hasTreatment :maintain_healthy_weight .
+        
+        :GERD :hasTreatment :exercise .
+        
+        :Chronic_cholestasis :hasTreatment :eat_healthy .
+        
+        :Chronic_cholestasis :hasTreatment :anti_itch_medicine .
+        
+        :Chronic_cholestasis :hasTreatment :consult_doctor .
+        
+        :Chronic_cholestasis :hasTreatment :cold_baths .
+        
+        :hepatitis_A :hasTreatment :Consult_nearest_hospital .
+        
+        :hepatitis_A :hasTreatment :avoid_fatty_spicy_food .
+        
+        :hepatitis_A :hasTreatment :wash_hands_through .
+        
+        :hepatitis_A :hasTreatment :medication .
+        
+        :Osteoarthristis :hasTreatment :consult_nearest_hospital .
+        
+        :Osteoarthristis :hasTreatment :follow_up .
+        
+        :Osteoarthristis :hasTreatment :salt_baths .
+        
+        :Osteoarthristis :hasTreatment :acetaminophen .
+        
+        :vertigo_Paroymsal__Positional_Vertigo :hasTreatment :avoid_abrupt_head_movment .
+        
+        :vertigo_Paroymsal__Positional_Vertigo :hasTreatment :lie_down .
+        
+        :vertigo_Paroymsal__Positional_Vertigo :hasTreatment :relax .
+        
+        :vertigo_Paroymsal__Positional_Vertigo :hasTreatment :avoid_sudden_change_in_body .
+        
+        :Hypoglycemia :hasTreatment :lie_down_on_side .
+        
+        :Hypoglycemia :hasTreatment :check_in_pulse .
+        
+        :Hypoglycemia :hasTreatment :drink_sugary_drinks .
+        
+        :Hypoglycemia :hasTreatment :consult_doctor .
+        
+        :Acne :hasTreatment :avoid_fatty_spicy_food .
+        
+        :Acne :hasTreatment :avoid_too_many_products .
+        
+        :Acne :hasTreatment :bath_twice .
+        
+        :Acne :hasTreatment :drink_plenty_of_water .
+        
+        :Diabetes :hasTreatment :exercise .
+        
+        :Diabetes :hasTreatment :follow_up .
+        
+        :Diabetes :hasTreatment :consult_doctor .
+        
+        :Diabetes :hasTreatment :have_balanced_diet .
+        
+        :Impetigo :hasTreatment :remove_scabs_with_wet_compressed_cloth .
+        
+        :Impetigo :hasTreatment :use_antibiotics .
+        
+        :Impetigo :hasTreatment :soak_affected_area_in_warm_water .
+        
+        :Impetigo :hasTreatment :consult_doctor .
+        
+        :Hypertension :hasTreatment :reduce_stress .
+        
+        :Hypertension :hasTreatment :get_proper_sleep .
+        
+        :Hypertension :hasTreatment :meditation .
+        
+        :Hypertension :hasTreatment :salt_baths .
+        
+        :Peptic_ulcer_diseae :hasTreatment :eliminate_milk .
+        
+        :Peptic_ulcer_diseae :hasTreatment :avoid_fatty_spicy_food .
+        
+        :Peptic_ulcer_diseae :hasTreatment :limit_alcohol .
+        
+        :Peptic_ulcer_diseae :hasTreatment :consume_probiotic_food .
+        
+        :Common_Cold :hasTreatment :avoid_cold_food .
+        
+        :Common_Cold :hasTreatment :take_vapour .
+        
+        :Common_Cold :hasTreatment :keep_fever_in_check .
+        
+        :Common_Cold :hasTreatment :drink_vitamin_c_rich_drinks .
+        
+        :Chicken_pox :hasTreatment :avoid_public_places .
+        
+        :Chicken_pox :hasTreatment :consume_neem_leaves .
+        
+        :Chicken_pox :hasTreatment :take_vaccine .
+        
+        :Chicken_pox :hasTreatment :use_neem_in_bathing .
+        
+        :Cervical_spondylosis :hasTreatment :exercise .
+        
+        :Cervical_spondylosis :hasTreatment :take_otc_pain_reliver .
+        
+        :Cervical_spondylosis :hasTreatment :consult_doctor .
+        
+        :Cervical_spondylosis :hasTreatment :use_heating_pad_or_cold_pack .
+        
+        :Hyperthyroidism :hasTreatment :take_radioactive_iodine_treatment .
+        
+        :Hyperthyroidism :hasTreatment :eat_healthy .
+        
+        :Hyperthyroidism :hasTreatment :massage .
+        
+        :Hyperthyroidism :hasTreatment :use_lemon_balm .
+        
+        :Urinary_tract_infection :hasTreatment :drink_cranberry_juice .
+        
+        :Urinary_tract_infection :hasTreatment :increase_vitamin_c_intake .
+        
+        :Urinary_tract_infection :hasTreatment :take_probiotics .
+        
+        :Urinary_tract_infection :hasTreatment :drink_plenty_of_water .
+        
+        :Varicose_veins :hasTreatment :lie_down_flat_and_raise_the_leg_high .
+        
+        :Varicose_veins :hasTreatment :dont_stand_still_for_long .
+        
+        :Varicose_veins :hasTreatment :use_vein_compression .
+        
+        :Varicose_veins :hasTreatment :use_oinments .
+        
+        :AIDS :hasTreatment :avoid_open_cuts .
+        
+        :AIDS :hasTreatment :follow_up .
+        
+        :AIDS :hasTreatment :wear_ppe_if_possible .
+        
+        :AIDS :hasTreatment :consult_doctor .
+        
+        :Paralysis_brain_hemorrhage :hasTreatment :eat_healthy .
+        
+        :Paralysis_brain_hemorrhage :hasTreatment :consult_doctor .
+        
+        :Paralysis_brain_hemorrhage :hasTreatment :massage .
+        
+        :Paralysis_brain_hemorrhage :hasTreatment :exercise .
+        
+        :Typhoid :hasTreatment :antiboitic_therapy .
+        
+        :Typhoid :hasTreatment :medication .
+        
+        :Typhoid :hasTreatment :eat_high_calorie_vegitables .
+        
+        :Typhoid :hasTreatment :consult_doctor .
+        
+        :Hepatitis_B :hasTreatment :consult_nearest_hospital .
+        
+        :Hepatitis_B :hasTreatment :eat_healthy .
+        
+        :Hepatitis_B :hasTreatment :vaccination .
+        
+        :Hepatitis_B :hasTreatment :medication .
+        
+        :Fungal_infection :hasTreatment :keep_infected_area_dry .
+        
+        :Fungal_infection :hasTreatment :use_detol_or_neem_in_bathing_water .
+        
+        :Fungal_infection :hasTreatment :use_clean_cloths .
+        
+        :Fungal_infection :hasTreatment :bath_twice .
+        
+        :Hepatitis_C :hasTreatment :Consult_nearest_hospital .
+        
+        :Hepatitis_C :hasTreatment :eat_healthy .
+        
+        :Hepatitis_C :hasTreatment :vaccination .
+        
+        :Hepatitis_C :hasTreatment :medication .
+        
+        :Migraine :hasTreatment :reduce_stress .
+        
+        :Migraine :hasTreatment :meditation .
+        
+        :Migraine :hasTreatment :consult_doctor .
+        
+        :Migraine :hasTreatment :use_poloroid_glasses_in_sun .
+        
+        :Bronchial_Asthma :hasTreatment :switch_to_loose_cloothing .
+        
+        :Bronchial_Asthma :hasTreatment :take_deep_breaths .
+        
+        :Bronchial_Asthma :hasTreatment :seek_help .
+        
+        :Bronchial_Asthma :hasTreatment :get_away_from_trigger .
+        
+        :Alcoholic_hepatitis :hasTreatment :medication .
+        
+        :Alcoholic_hepatitis :hasTreatment :follow_up .
+        
+        :Alcoholic_hepatitis :hasTreatment :stop_alcohol_consumption .
+        
+        :Alcoholic_hepatitis :hasTreatment :consult_doctor .
+        
+        :Jaundice :hasTreatment :medication .
+        
+        :Jaundice :hasTreatment :eat_fruits_and_high_fiberous_food .
+        
+        :Jaundice :hasTreatment :consume_milk_thistle .
+        
+        :Jaundice :hasTreatment :drink_plenty_of_water .
+        
+        :Hepatitis_E :hasTreatment :medication .
+        
+        :Hepatitis_E :hasTreatment :stop_alcohol_consumption .
+        
+        :Hepatitis_E :hasTreatment :rest .
+        
+        :Hepatitis_E :hasTreatment :consult_doctor .
+        
+        :Dengue :hasTreatment :keep_hydrated .
+        
+        :Dengue :hasTreatment :keep_mosquitos_away .
+        
+        :Dengue :hasTreatment :avoid_fatty_spicy_food .
+        
+        :Dengue :hasTreatment :drink_papaya_leaf_juice .
+        
+        :Hepatitis_D :hasTreatment :medication .
+        
+        :Hepatitis_D :hasTreatment :eat_healthy .
+        
+        :Hepatitis_D :hasTreatment :follow_up .
+        
+        :Hepatitis_D :hasTreatment :consult_doctor .
+        
+        :Heart_attack :hasTreatment :chew_or_swallow_asprin .
+        
+        :Heart_attack :hasTreatment :call_ambulance .
+        
+        :Heart_attack :hasTreatment :keep_calm .
+        
+        :Pneumonia :hasTreatment :medication .
+        
+        :Pneumonia :hasTreatment :follow_up .
+        
+        :Pneumonia :hasTreatment :rest .
+        
+        :Pneumonia :hasTreatment :consult_doctor .
+        
+        :Arthritis :hasTreatment :use_hot_and_cold_therapy .
+        
+        :Arthritis :hasTreatment :try_acupuncture .
+        
+        :Arthritis :hasTreatment :massage .
+        
+        :Arthritis :hasTreatment :exercise .
+        
+        :Gastroenteritis :hasTreatment :ease_back_into_eating .
+        
+        :Gastroenteritis :hasTreatment :stop_eating_solid_food_for_while .
+        
+        :Gastroenteritis :hasTreatment :try_taking_small_sips_of_water .
+        
+        :Gastroenteritis :hasTreatment :rest .
+        
+        :Tuberculosis :hasTreatment :medication .
+        
+        :Tuberculosis :hasTreatment :cover_mouth .
+        
+        :Tuberculosis :hasTreatment :rest .
+        
+        :Tuberculosis :hasTreatment :consult_doctor .
+        
+        :Dimorphic_hemmorhoidspiles :hasTreatment :consume_witch_hazel .
+        
+        :Dimorphic_hemmorhoidspiles :hasTreatment :avoid_fatty_spicy_food .
+        
+        :Dimorphic_hemmorhoidspiles :hasTreatment :warm_bath_with_epsom_salt .
+        
+        :Dimorphic_hemmorhoidspiles :hasTreatment :consume_alovera_juice .
+        
