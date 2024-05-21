@@ -27,7 +27,7 @@ WHERE {
 
  . Quem planta tomates?
  ```
- SELECT ?pessoa WHERE{
+ SELECT * WHERE{
     ?pessoa :cultiva :tomate.
 }
 ```
@@ -72,10 +72,19 @@ SELECT * WHERE {
 
 Cria uma query CONSTRUCT que diagnostique a doença de cada pessoa, ou seja,
 produza uma lista de triplos com a forma :patientX :hasDisease :diseaseY. No fim, acrescenta estes triplos à ontologia;
+```
+CONSTRUCT {
+  ?patient :hasDisease ?disease .
+}
+WHERE {
+  ?patient rdf:type :Patient ;
+           :exhibitsSymptom ?symptom .
+  ?disease :hasSymptom ?symptom .
+}
+```
 
 Distribuição dos doentes pelas doenças, ou seja, dá como resultado uma lista de pares (doença, nº de doentes);
 ```
-
 SELECT ?doenca (COUNT(?doente) as ?ndoentes)
 WHERE {
     ?doente a :Patient.
@@ -109,3 +118,6 @@ group by ?tratamento
 ```
 
 
+Para o exercicio 2 basta correr o ex2.py
+
+Ignore as pastas extra que fiz asneira.
