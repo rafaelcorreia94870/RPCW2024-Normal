@@ -1,4 +1,4 @@
-EX1:
+# EX1:
 
 . Quantas classes estão definidas na Ontologia?
 ```
@@ -38,7 +38,7 @@ SELECT * WHERE {
     ?s :contrataTemporario "sim".
 }
 ```
-EX2:
+# EX2:
 ```
 Quantas doenças estão presentes na ontologia?
 SELECT * WHERE {
